@@ -96,6 +96,7 @@ function Option({ option }) {
 }
 
 
+
 export default function Page({ children, scrollToAbout }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownButton = useRef(null);

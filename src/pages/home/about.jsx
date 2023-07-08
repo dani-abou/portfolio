@@ -2,7 +2,6 @@ import {
   StyledAboutDiv,
   StyledAboutFlex,
   StyledBodyDiv,
-  StyledLinks,
   StyledParagraph,
   StyledPortrait
 } from "./aboutStyle"

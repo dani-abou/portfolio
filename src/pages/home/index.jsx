@@ -5,8 +5,6 @@ import About from "./about";
 import {
   RedSpan, StyledCursor,
   StyledHireButton, StyledHireButtonText,
-  StyledHireButtonTextNoEffect,
-  StyledHoverEffect, StyledHoverEffect2,
   StyledLink,
   StyledLinks,
   StyledMainText, StyledSoundwave,
@@ -22,8 +20,6 @@ const TEXT = ['Hello!', `I'm _Dani`, 'a Web Developer.']
 export default function Home() {
   const [index, setIndex] = useState([0, 0])
   const [showButton, setShowButton] = useState(false);
-
-  const [buttonHover, setButtonHover] = useState(false);
 
   const aboutRef = useRef(null);
 
@@ -91,26 +87,10 @@ export default function Home() {
       })}
       <br />
 
-      <StyledHireButton
-        onMouseOver={() => setButtonHover(true)}
-        onMouseLeave={() => setButtonHover(false)}
-        $showButton={showButton}
-      >
-        {/* <a
-          style={{ height: '100%', width: '100%', color: 'inherit', backgroundColor: 'green' }}
-          href='mailto: dabouhamad@gmail.com'
-          onClick={() => console.log('clicked')}
-        > */}
-
-        {/* <StyledHoverEffect $hovered={buttonHover} /> */}
-        {/* <StyledHoverEffect2 $hovered={buttonHover} opposite={true} /> */}
-
+      <StyledHireButton $showButton={showButton}>
         <StyledHireButtonText >
           Hire Me!
         </StyledHireButtonText>
-        {/* </a> */}
-
-
       </StyledHireButton>
     </div>
     <StyledSoundwaveBackground>

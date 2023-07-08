@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { FOOTER_BACKGROUND_COLOR, OTHER_BACKGROUND_COLOR, SECONDARY_COLOR } from "../../layout/style";
+import { FOOTER_BACKGROUND_COLOR, OTHER_BACKGROUND_COLOR } from "../../layout/style";
 
 export const StyledAboutDiv = styled.div`
   width: 100%;

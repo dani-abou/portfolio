@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import {
   BACKGROUND_COLOR, OTHER_BACKGROUND_COLOR,
@@ -104,46 +103,6 @@ export const StyledHireButtonText = styled.p`
   left: 50%;
   transform: translate(-50%, -50%);
 `
-export const StyledHireButtonTextNoEffect = styled(StyledHireButtonText)`
-  /* color: ${BACKGROUND_COLOR}; */
-  z-index: 2;
-
-  /* :after { */
-  /* } */
-`
-
-export const StyledHoverEffect = styled.div`
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0; top: 0;
-
-  ${props => props.$hovered ?
-    `transform: scaleX(1);
-  transform-origin: bottom left;` :
-    `transform: scaleX(0);
-  transform-origin: bottom right;`
-  }
-  display: block;
-  background-color: ${TEXT_COLOR};
-
-  transition: transform .3s ease;
-  overflow: hidden;
-  z-index: 1;
-    mix-blend-mode: difference;
-
-`
-
-export const StyledHoverEffect2 = styled(StyledHoverEffect)`
-    ${props => props.$hovered ?
-    `transform: scaleX(0);
-  transform-origin: bottom right;` :
-    `transform: scaleX(1);
-  transform-origin: bottom left;`
-  }
-
-`
-
 
 export const StyledLinks = styled.div`
   width: 100%;

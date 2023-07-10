@@ -10,7 +10,7 @@ export const StyledMainTextContainer = styled.div`
   min-height: 330px;
   overflow: hidden;
   ${() => media.mobile(`
-    min-height: 300px
+    min-height: 250px
   `)}
     ${() => media.tablet(`
     min-height: 300px
@@ -26,7 +26,7 @@ export const StyledMainText = styled.p`
   letter-spacing: -0.02em;
 
     ${() => media.mobile(`
-    font-size: 55px;
+    font-size: 45px;
   `)}
 
   ${() => media.tablet(`
@@ -150,7 +150,7 @@ export const StyledLinks = styled.div`
   position: relative;
 
     ${() => media.mobile(`
-    gap:70px;
+    gap:35px;
   `)}
 
   ${() => media.tablet(`

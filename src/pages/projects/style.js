@@ -26,6 +26,8 @@ export const StyledProjectContainer = styled.a`
   ${() => media.mobile(`
     flex-direction: column;
     width: 95%;
+    padding: 40px 15px;
+
   `)}
 
 

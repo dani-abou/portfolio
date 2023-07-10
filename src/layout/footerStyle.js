@@ -149,7 +149,9 @@ export const StyledFooterEmail = styled(Link)`
 export const StyledCopyrightContainer = styled.div`
   width: 100%;
   text-align: center;
-  height: 25px;
+    font-size: 10px;
+
+  padding-bottom: 4px;
 
   overflow: hidden;
   background-color: ${BACKGROUND_COLOR};

@@ -167,7 +167,7 @@ export const StyledLink = styled.a`
 `
 
 export const StyledDownloadImg = styled.img`
-  height: 20px;
-  vertical-align: bottom;
+  height: 18px;
+  vertical-align: middle;
   filter: invert(100%);
 `

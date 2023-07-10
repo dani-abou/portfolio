@@ -224,9 +224,9 @@ export const StyledChildren = styled.div`
 `
 
 export const StyledDownloadImg = styled.img`
-  height: 20px;
+  height: 18px;
   vertical-align: bottom;
-  /* filter: invert(100%); */
+  filter: invert(20%);
 `
 
 export const StyledPage = styled.div`

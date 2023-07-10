@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import Footer from "./footer";
 import {
   StyledButtonGroup,
+  StyledChildren,
+  StyledDownloadImg,
   StyledDropdown,
   StyledEmailContainer,
   StyledGuitar,
@@ -12,13 +14,18 @@ import {
   StyledNavbarButton,
   StyledNavbarContainer,
   StyledOption, StyledOptionLabel,
-  StyledPage
+  StyledPage, StyledTitleContainer
 } from "./style";
+import MobileNavbar from "./mobileNavbar";
 
-function NavButton({ children, dropdownButton, ...props }) {
+export function NavButton({ children, className, dropdownButton, ...props }) {
   const [hover, setHover] = useState(false)
 
-  return <StyledNavbarButton onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)} {...props}>
+  return <StyledNavbarButton
+    onMouseOver={() => setHover(true)}
+    onMouseLeave={() => setHover(false)}
+    className={className}
+    {...props}>
     <StyledNavButtonText>
       {children}
     </StyledNavButtonText>
@@ -29,10 +36,10 @@ function NavButton({ children, dropdownButton, ...props }) {
 function Navbar({ scrollToAbout, dropdownButton, setShowDropdown }) {
 
   return <StyledNavbarContainer>
-    <div style={{ flex: '1 0' }}>
+    <StyledTitleContainer>
       <StyledNameContainer to='/'>Dani Abouhamad</StyledNameContainer>
       <StyledEmailContainer href='mailto: dabouhamad@gmail.com'>dabouhamad@gmail.com</StyledEmailContainer>
-    </div>
+    </StyledTitleContainer>
     <StyledGuitarContainer to='/'>
       <StyledGuitar src="images/guitar.png" alt='guitar' />
     </StyledGuitarContainer>
@@ -57,7 +64,7 @@ const DROPDOWN_OPTIONS = [
   { label: 'Instagram', href: 'https://www.instagram.com/dabouboo' },
   { label: 'Github', href: 'https://github.com/dani-abou' },
   {
-    label: 'Resume', href: 'Resume.pdf',
+    label: <>Resume{' '}<StyledDownloadImg src='images/download.png' alt='download' /></>, href: 'Resume.pdf',
     props: {
       download: true
     }
@@ -110,6 +117,7 @@ export default function Page({ children, scrollToAbout }) {
 
   //Closes dropwdown when clicked outside
   const handleClickOutside = (event) => {
+
     if (
       showDropdown &&
       dropdownRef.current &&
@@ -122,12 +130,16 @@ export default function Page({ children, scrollToAbout }) {
   };
 
   return <StyledPage onClick={handleClickOutside}>
+    <MobileNavbar scrollToAbout={scrollToAbout} />
+
     <Navbar scrollToAbout={scrollToAbout} dropdownButton={dropdownButton} setShowDropdown={setShowDropdown} />
     <ContactDropdown show={showDropdown}
       position={refRect}
       dropdownRef={dropdownRef}
     />
-    {children}
+    <StyledChildren>
+      {children}
+    </StyledChildren>
     <Footer scrollToAbout={scrollToAbout} />
   </StyledPage>
 }

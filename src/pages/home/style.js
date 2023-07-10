@@ -1,16 +1,39 @@
 import { styled } from "styled-components";
 import {
-  BACKGROUND_COLOR, OTHER_BACKGROUND_COLOR,
+  BACKGROUND_COLOR,
   SECONDARY_COLOR,
   TEXT_COLOR
 } from "../../layout/style";
+import media from "../../screenSizes";
+
+export const StyledMainTextContainer = styled.div`
+  min-height: 330px;
+  overflow: hidden;
+  ${() => media.mobile(`
+    min-height: 300px
+  `)}
+    ${() => media.tablet(`
+    min-height: 300px
+  `)}
+`
 
 export const StyledMainText = styled.p`
   text-align: center;
   font-size: 65px;
   margin-bottom: 0px;
   margin-top: 0px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+
+    ${() => media.mobile(`
+    font-size: 55px;
+  `)}
+
+  ${() => media.tablet(`
+    font-size: 55px;
+  `)}
 `
+
 
 export const StyledSoundwave = styled.img`
   width: 85%;
@@ -18,11 +41,18 @@ export const StyledSoundwave = styled.img`
   margin-left: 50%;
   transform: translate(-50%);
   margin-top: -10px;
+
+    ${() => media.mobile(`
+    width: 150%;
+  `)}
+
+  ${() => media.tablet(`
+    width: 150%;
+  `)}
 `
 
 export const StyledSoundwaveBackground = styled.div`
   width: 100%;
-  /* background-image: linear-gradient(${BACKGROUND_COLOR} 74%, ${OTHER_BACKGROUND_COLOR}); */
   position: relative;
 `
 
@@ -40,7 +70,9 @@ export const RedSpan = styled.span`
   color: #fb4a59;
 `
 
-export const StyledHireButton = styled.div`
+
+export const StyledHireButton = styled.a`
+  display: block;
   margin-left: 50%;
   transform: translate(-50%);
   width: 155px;
@@ -79,6 +111,7 @@ export const StyledHireButton = styled.div`
     border-radius: 10px;
 		content: '';
     transition: transform .5s ease;
+
 	}
 
   &:focus, &:hover { 
@@ -113,12 +146,28 @@ export const StyledLinks = styled.div`
   height: 80px;
   background-color: #08192b;
   margin-top: -45px;
-  z-index: 1000;
+  z-index: 3;
   position: relative;
+
+    ${() => media.mobile(`
+    gap:70px;
+  `)}
+
+  ${() => media.tablet(`
+    gap:70px;
+  `)}
 `
 
 export const StyledLink = styled.a`
   cursor: pointer;
   font-size: 20px;
   color: ${TEXT_COLOR};
+  text-decoration: none;
+  border-bottom: 1px solid;
+`
+
+export const StyledDownloadImg = styled.img`
+  height: 20px;
+  vertical-align: bottom;
+  filter: invert(100%);
 `

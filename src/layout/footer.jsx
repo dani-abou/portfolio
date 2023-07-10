@@ -9,7 +9,7 @@ import {
   StyledNameContainer,
   StyledNavigateContainer,
   StyledVolcano,
-  StyledVolcanoContainer
+  StyledVolcanoContainer, StyledVolcanoContainerMobile
 } from "./footerStyle";
 
 export default function Footer({ scrollToAbout }) {
@@ -20,6 +20,9 @@ export default function Footer({ scrollToAbout }) {
   }, [])
 
   return <><StyledFooterContainer>
+    <StyledVolcanoContainerMobile>
+      <StyledVolcano src='images/volcano.png' alt='volcano' />
+    </StyledVolcanoContainerMobile>
     <StyledNavigateContainer>
       <StyledFooterTitle>Navigate</StyledFooterTitle>
       <StyledFooterLink
@@ -38,10 +41,11 @@ export default function Footer({ scrollToAbout }) {
     <StyledVolcanoContainer>
       <StyledVolcano src='images/volcano.png' alt='volcano' />
     </StyledVolcanoContainer>
-    <StyledNameContainer style={{ textAlign: 'right' }}>
+    <StyledNameContainer>
       <StyledFooterName>Dani Abouhamad</StyledFooterName>
       <StyledFooterEmail to='mailto: dabouhamad@gmail.com'
       >dabouhamad@gmail.com</StyledFooterEmail>
+      <br />
     </StyledNameContainer>
 
   </StyledFooterContainer>

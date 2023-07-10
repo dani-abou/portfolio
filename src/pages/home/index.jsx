@@ -4,11 +4,13 @@ import About from "./about";
 
 import {
   RedSpan, StyledCursor,
-  StyledHireButton, StyledHireButtonText,
+  StyledDownloadImg,
+  StyledHireButton,
+  StyledHireButtonText,
   StyledLink,
   StyledLinks,
   StyledMainText, StyledSoundwave,
-  StyledSoundwaveBackground
+  StyledSoundwaveBackground, StyledMainTextContainer
 } from "./style";
 
 function getRandomInt(min, max) {
@@ -68,11 +70,13 @@ export default function Home() {
   useEffect(() => {
     if (window.location.href.includes('#about') && aboutRef !== null) {
       scrollTo();
+    } else {
+      window.scrollTo(0, 0);
     }
   }, [aboutRef, scrollTo])
 
   return <Page scrollToAbout={scrollTo}>
-    <div style={{ height: '330px', overflowX: 'hidden' }}>
+    <StyledMainTextContainer >
       {TEXT.slice(0, index[0] + 1).map((line, i) => {
         const text = i !== index[0] ? line : line.substring(0, index[1])
         if (text.includes('_')) {
@@ -86,13 +90,15 @@ export default function Home() {
         </StyledMainText>
       })}
       <br />
-
-      <StyledHireButton $showButton={showButton}>
+      <StyledHireButton
+        $showButton={showButton}
+        href='mailto: dabouhamad@gmail.com'
+      >
         <StyledHireButtonText >
           Hire Me!
         </StyledHireButtonText>
       </StyledHireButton>
-    </div>
+    </StyledMainTextContainer>
     <StyledSoundwaveBackground>
       <StyledSoundwave src='images/soundWave.svg' alt='sound wave' />
     </StyledSoundwaveBackground>
@@ -102,7 +108,10 @@ export default function Home() {
         LinkedIn
       </StyledLink>
       <StyledLink target="_blank" href='https://github.com/dani-abou'>Github</StyledLink>
-      <StyledLink target="_blank" href='Resume.pdf' download>Resume</StyledLink>
+      <StyledLink target="_blank" href='Resume.pdf' download>
+        Resume {' '}
+        <StyledDownloadImg src='images/download.png' alt='download' />
+      </StyledLink>
     </StyledLinks>
     <About />
   </Page>

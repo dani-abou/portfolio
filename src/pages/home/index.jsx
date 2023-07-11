@@ -52,7 +52,7 @@ export default function Home() {
         //Iterate through the current line
         return [prev[0], prev[1] + 1]
       });
-      if (loop) setTimeout(typing, getRandomInt(100, 500));
+      if (loop) setTimeout(typing, getRandomInt(50, 350));
     }
     setTimeout(typing, 1000);
   }, [])
